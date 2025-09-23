@@ -1,0 +1,19 @@
+.staff__nav {
+  height: 50px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background: #191412;
+  display: flex;
+  align-items: center;
+}
+
+.staff__ul {
+  display: flex;
+}
+
+.staff__btn {
+  cursor: pointer;
+  padding-left: 20px;
+  font-family: var(--font-secondary);
+}

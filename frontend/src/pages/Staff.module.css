@@ -1,0 +1,43 @@
+.management__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 10px;
+}
+.reservation {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #302b29;
+  border-radius: 20px;
+  width: 100%;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+}
+
+.reservation__text {
+  padding-left: 20px;
+}
+.reservation__text:first-child{
+    padding-top:20px;
+}
+
+.management__buttons {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+  .management__inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .management__inner {
+    grid-template-columns: 1fr;
+  }
+}

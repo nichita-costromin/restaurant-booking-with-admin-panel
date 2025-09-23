@@ -1,0 +1,26 @@
+/* Popup */
+
+.popup{
+  position: fixed;       
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--mainc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.popup__wrapper{
+  display:flex;
+}
+
+.cancel__res__btn{
+  cursor:pointer;
+  padding:30px;
+}
+.cancel__res__btn__first{
+  cursor:pointer;
+  color:rgb(160, 34, 34);
+}

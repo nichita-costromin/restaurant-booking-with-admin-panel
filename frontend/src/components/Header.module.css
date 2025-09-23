@@ -1,0 +1,209 @@
+/* Base mobile header menu (full-screen) */
+.header__menu {
+  display: block;
+}
+
+.menu__body {
+  position: fixed;
+  top: 90px;
+  left: -100%;
+  width: 100%;
+  height: calc(100% - 90px);
+  background: #191412;
+  transition: left 0.3s ease;
+  overflow-y: auto;
+  padding: 2rem 1rem;
+}
+
+.header__menu.active .menu__body {
+  left: 0;
+}
+
+/* Hide desktop menu on mobile */
+@media (min-width: 768px) {
+  .menu__body {
+    position: static;
+    top: auto;
+    left: auto;
+    width: auto;
+    height: auto;
+    background: none;
+    padding: 0;
+    transition: none;
+  }
+
+  .header__menu {
+    display: flex;
+    flex: 1;
+    align-items: center;
+  }
+}
+
+
+
+
+.header {
+  border-bottom: 1px solid rgba(224, 215, 198, 0.1411764706);
+  background: rgb(25 20 18 / 88%);
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 50;
+  -webkit-transition: background 0.5s ease 0s;
+  transition: background 0.5s ease 0s;
+  height: 90px;
+}
+
+.header__menu {
+  justify-self: start;
+}
+
+.active {
+  left: 0;
+}
+
+.header__container {
+  display: flex;
+  height: inherit;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.header__logo {
+  flex: 1 1 auto;
+}
+
+/* Menu Links */
+
+.menu__body {
+  border-top: 1px solid rgba(224, 215, 198, 0.1960784314);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  overflow: auto;
+  background-color: #191412;
+  -webkit-transition: left 0.3s ease 0s;
+  transition: left 0.3s ease 0s;
+  margin-top: 5.625rem;
+  padding: 2rem 1rem 2rem 1rem;
+}
+
+.menu-open .menu__body {
+  left: 0;
+}
+
+/* Phone */
+
+.header_phone_icon {
+  color: #dbd2c1;
+  font-size: 1.7rem;
+  margin-right: 1.5rem;
+}
+
+/* Bookings Button & Animation */
+
+.bookings__button {
+  position: relative;
+  width: 170px;
+  height: 43px;
+  border: 0.5px solid #dbd2c1;
+  color: #dbd2c1;
+  background: transparent;
+  font-size: small;
+  font-family: "Montserrat";
+  letter-spacing: normal;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bookings__button::before,
+.bookings__button::after,
+.bookings__button span::before,
+.bookings__button span::after {
+  content: "";
+  position: absolute;
+  background-color: #dbd2c1;
+  z-index: 2;
+  transition: none;
+}
+
+/* Top */
+.bookings__button::before {
+  height: 1px;
+  width: 0%;
+  top: 0;
+  left: 0;
+}
+
+/* Right */
+.bookings__button::after {
+  width: 1px;
+  height: 0%;
+  top: 0;
+  right: 0;
+}
+
+/* Bottom */
+.bookings__button span::before {
+  height: 1px;
+  width: 0%;
+  bottom: 0;
+  right: 0;
+}
+
+/* Left */
+.bookings__button span::after {
+  width: 1px;
+  height: 0%;
+  bottom: 0;
+  left: 0;
+}
+
+/* Animations on hover */
+.bookings__button:hover::before {
+  animation: drawTop 0.25s forwards;
+}
+.bookings__button:hover::after {
+  animation: drawRight 0.25s 0.25s forwards;
+}
+.bookings__button:hover span::before {
+  animation: drawBottom 0.25s 0.5s forwards;
+}
+.bookings__button:hover span::after {
+  animation: drawLeft 0.25s 0.75s forwards;
+}
+
+.btn__icon {
+  font-size: 16px;
+  font-weight: 300;
+  margin-right: 0.5rem;
+  transform: translate(0, 2px);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Keyframes */
+@keyframes drawTop {
+  to {
+    width: 100%;
+  }
+}
+@keyframes drawRight {
+  to {
+    height: 100%;
+  }
+}
+@keyframes drawBottom {
+  to {
+    width: 100%;
+  }
+}
+@keyframes drawLeft {
+  to {
+    height: 100%;
+  }
+}
