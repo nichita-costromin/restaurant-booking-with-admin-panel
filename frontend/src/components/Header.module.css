@@ -39,9 +39,6 @@
   }
 }
 
-
-
-
 .header {
   border-bottom: 1px solid rgba(224, 215, 198, 0.1411764706);
   background: rgb(25 20 18 / 88%);
@@ -64,6 +61,7 @@
 }
 
 .header__container {
+  position: relative;
   display: flex;
   height: inherit;
   justify-content: space-between;
@@ -72,7 +70,12 @@
 }
 
 .header__logo {
-  flex: 1 1 auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  flex: 0 0 auto;
 }
 
 /* Menu Links */
@@ -205,5 +208,15 @@
 @keyframes drawLeft {
   to {
     height: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__logo {
+    position: relative;
+    left: 0%;
+    transform: initial;
+    top: 0%;
+    flex: 1 1 auto;
   }
 }
